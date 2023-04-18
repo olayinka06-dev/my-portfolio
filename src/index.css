@@ -1,0 +1,125 @@
+@import url('https://fonts.googleapis.com/css2?family=Open+Sans:wght@400;500;600;700;800&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Raleway:wght@400;500;600;700;800&display=swap');
+*{
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+h1,h2,h3,h4,h5,h6 {
+  font-family: "Raleway", sans-serif;
+}
+p{
+  font-family: "Open Sans", sans-serif;
+}
+:root {
+  --mainbody: white;
+  --herobackground: rgba(255, 255, 255, 0.8);
+  --activehover: linear-gradient(to right, hsl(136, 65%, 51%), hsl(192, 70%, 51%));
+  --gradientbackground: rgb(242,243,245);
+  --gradientcolor: rgb(69,80,91);
+  --herocolor: hsl(136, 65%, 51%);
+  --herospan: hsl(192, 70%, 51%);
+  --text: #45505b;
+  --social: #45505b;
+  --sectionbackground: white;
+}
+
+.light-mode{
+  --mainbody: white;
+  --herobackground: rgba(255, 255, 255, 0.8);
+  --activehover: linear-gradient(to right, hsl(136, 65%, 51%), hsl(192, 70%, 51%));
+  --gradientbackground: rgb(242,243,245);
+  --gradientcolor: rgb(69,80,91);
+  --herocolor: hsl(136, 65%, 51%);
+  --herospan: hsl(192, 70%, 51%);
+  --text: #45505b;
+  --social: #45505b;
+  --sectionbackground: white;
+}
+
+.dark-mode{
+--mainbody: black;
+--herobackground: rgba(5, 13, 24, 0.3);
+--activehover: linear-gradient( to right, rgb(241, 169, 34), hsl(353, 87%, 64%));
+/* --activehover: linear-gradient(to right, hsl(206, 48%, 27%), hsl(229, 64%, 46%)); */
+
+/* --gradientbackground: hsl(209, 23%, 22%); */
+--gradientbackground: rgb(34, 31, 31);
+--gradientcolor: white;
+/* --herocolor: rgb(241, 169, 34); */
+/* --herocolor:   hsl(229, 64%, 46%); */
+--herocolor:   red;
+--herospan:  red;
+/* --herospan:  hsl(229, 64%, 46%); */
+/* --herospan: hsl(353, 87%, 64%); */
+--text: white;
+--social: rgb(69,80,91);
+/* --sectionbackground: hsl(209, 23%, 22%); */
+--sectionbackground: hsl(0%, 0%, 0%);
+}
+
+.app{
+background-color: var(--mainbody) !important;
+
+}
+
+section {
+  overflow: hidden;
+}
+.section-title {
+  width: 100%;
+  text-align: center;
+  padding-bottom: 30px;
+}
+.section-title h2 {
+  font-size: 32px;
+  font-weight: bold;
+  text-transform: uppercase;
+  margin-bottom: 20px;
+  padding-bottom: 20px;
+  position: relative;
+  color: var(--herocolor);
+}
+.section-title h2::before {
+  content: "";
+  position: absolute;
+  display: block;
+  width: 150px;
+  height: 1px;
+  background: #ddd;
+  bottom: 1px;
+  left: calc(48% - 60px);
+}
+.section-title h2::after {
+  content: "";
+  position: absolute;
+  display: block;
+  width: 40px;
+  height: 3px;
+  background: var(--activehover);
+  bottom: 0;
+  left: calc(48% - 20px);
+  animation: animate 4s linear infinite;
+}
+@keyframes animate{
+    0%{
+        width: 40px;
+    }
+    50%{
+        width: 80px;
+    }
+    100%{
+        width: 40px;
+    }
+}
+.section-title p {
+  margin-bottom: 0;
+  color: var(--text);
+}
+@media (min-width: 992px) {
+  section {
+    padding-left: 160px;
+  }
+}
+
+
