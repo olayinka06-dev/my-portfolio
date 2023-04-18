@@ -3,7 +3,6 @@ import About from './About'
 import Contact from './Contact';
 import Hero from './Hero';
 import NavigationBar from './NavigationBar';
-import Services from './Services';
 import BackToTop from './BackToTop';
 import { useState, useEffect, useRef } from 'react';
 import {MdOutlineNightlight, MdOutlineLightMode} from "react-icons/md"
