@@ -1,8 +1,12 @@
 import React from 'react'
 import styled from 'styled-components';
 import profileimg2 from './images/profile2-img.jpg';
+// import AOS from 'aos';
+// import 'aos/dist/aos.css';
+
 
 const About = () => {
+  
   return (
     <Wrapper>
     <section id="about" className="about">
@@ -39,14 +43,14 @@ const About = () => {
             <div className="about-content">
               <div className="about-info">
                 <ul>
-                  <li><i class="bi bi-chevron-right"></i> <strong>Birthday:</strong> <span>1 May 1995</span></li>
+                  <li><i class="bi bi-chevron-right"></i> <strong>Birthday:</strong> <span>21 Feb 2003</span></li>
                   <li><i class="bi bi-chevron-right"></i> <strong>Phone:</strong> <span>+234 9038464244</span></li>
                 </ul>
               </div>
               <div className="about-info">
                 <ul>
                   <li><i class="bi bi-chevron-right"></i> <strong>Age:</strong> <span>20</span></li>
-                  <li><i class="bi bi-chevron-right"></i> <strong>PhEmailone:</strong> <span>olayinkaconsul</span></li>
+                  <li><i class="bi bi-chevron-right"></i> <strong>PhEmailone:</strong> <span>olayinkaconsult@gmail.com</span></li>
                 </ul>
               </div>
             </div>
@@ -58,7 +62,7 @@ const About = () => {
         </div>
       </div>
     </section> 
-    {/* <section id="skills" class="skills section-bg">
+    <section id="skills" class="skills section-bg">
       <div class="container" data-aos="fade-up">
 
         <div class="section-title">
@@ -121,7 +125,7 @@ const About = () => {
         </div>
 
       </div>
-    </section>      */}
+    </section>     
     </Wrapper>
   )
 }
@@ -204,6 +208,8 @@ const Wrapper = styled.section`
   padding-top: 40px;
   padding-right: 10px;
   padding-bottom: 20px;
+  background-color: var(--sectionbackground);
+
 }
 .skills .progress {
   height: 60px;

@@ -12,56 +12,57 @@ p{
   font-family: "Open Sans", sans-serif;
 }
 :root {
+  --letter:#45505b;
+  --navigationbody:  white;
   --mainbody: white;
   --herobackground: rgba(255, 255, 255, 0.8);
   --activehover: linear-gradient(to right, hsl(136, 65%, 51%), hsl(192, 70%, 51%));
-  --gradientbackground: rgb(242,243,245);
-  --gradientcolor: rgb(69,80,91);
+  --navlinkbackground: rgb(242,243,245);
+  --navlinkcolor: rgb(69,80,91);
   --herocolor: hsl(136, 65%, 51%);
   --herospan: hsl(192, 70%, 51%);
   --text: #45505b;
   --social: #45505b;
   --sectionbackground: white;
+  --navshadow: 0px 4px 4px rgb(222, 225, 232);
 }
 
 .light-mode{
+  --letter:#45505b;
+  --navigationbody:  white;
   --mainbody: white;
   --herobackground: rgba(255, 255, 255, 0.8);
   --activehover: linear-gradient(to right, hsl(136, 65%, 51%), hsl(192, 70%, 51%));
-  --gradientbackground: rgb(242,243,245);
-  --gradientcolor: rgb(69,80,91);
+  --navlinkbackground: rgb(242,243,245);
+  --navlinkcolor: rgb(69,80,91);
   --herocolor: hsl(136, 65%, 51%);
   --herospan: hsl(192, 70%, 51%);
   --text: #45505b;
   --social: #45505b;
   --sectionbackground: white;
+  --navshadow: 0px 4px 4px rgb(222, 225, 232);
 }
 
 .dark-mode{
---mainbody: black;
---herobackground: rgba(5, 13, 24, 0.3);
---activehover: linear-gradient( to right, rgb(241, 169, 34), hsl(353, 87%, 64%));
-/* --activehover: linear-gradient(to right, hsl(206, 48%, 27%), hsl(229, 64%, 46%)); */
+  --navigationbody:  rgb(32,33,35);
+  --mainbody: rgb(32,33,35);
+  --herobackground: rgba(5, 13, 24, 0.3);
+  --activehover: linear-gradient(to right, hsl(206, 48%, 27%), hsl(229, 64%, 46%));
+  --navlinkbackground: rgba(9, 13, 18, 0.3);
+  --navlinkcolor: white;
+  --herocolor:   hsl(229, 64%, 46%);
+  --herospan:  hsl(229, 64%, 46%);
+  --text: rgb(219, 219, 219);
+  --letter: white;
+  --social: rgb(69,80,91);
+  --sectionbackground: rgb(32,33,35);
+  --navshadow: black;
 
-/* --gradientbackground: hsl(209, 23%, 22%); */
---gradientbackground: rgb(34, 31, 31);
---gradientcolor: white;
-/* --herocolor: rgb(241, 169, 34); */
-/* --herocolor:   hsl(229, 64%, 46%); */
---herocolor:   red;
---herospan:  red;
-/* --herospan:  hsl(229, 64%, 46%); */
-/* --herospan: hsl(353, 87%, 64%); */
---text: white;
---social: rgb(69,80,91);
-/* --sectionbackground: hsl(209, 23%, 22%); */
---sectionbackground: hsl(0%, 0%, 0%);
 }
-
-.app{
+/* .app{
 background-color: var(--mainbody) !important;
 
-}
+} */
 
 section {
   overflow: hidden;

@@ -115,7 +115,7 @@ const Wrapper = styled.div`
     color: var(--herospan)
   }
   .container p {
-    color: var(--text);
+    color: var(--letter);
     margin: 15px 0 0 0;
     font-size: 26px;
     font-family: "Poppins", sans-serif;
@@ -153,6 +153,8 @@ const Wrapper = styled.div`
       min-width: 0;
       width: 100%;
       overflow: hidden;
+      padding:0;
+      margin: 0;
 
     }
     .container h1 {
@@ -164,6 +166,21 @@ const Wrapper = styled.div`
       font-size: 20px;
       line-height: 24px;
     }
+    @keyframes slide-fade-in-one {
+    from {
+      opacity: 0;
+      transform: translateX(100%);
+      scale: 0;
+      overflow: hidden;
+
+    }
+    to {
+      opacity: 1;
+      transform: translateX(0px);
+      scale: 100%;
+      overflow: hidden;
+    }
+  }
 }
 
 

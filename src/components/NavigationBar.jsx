@@ -20,7 +20,7 @@ const NavigationBar = ({backgroundSwitcher, handleToggleSwitcher, activeLink}) =
             <aside  className={`${menu ? 'mobile-toggler' : ''}`}>
                 <div class="profile box-4">
                     <img src={profileimg} alt={profileimg} />
-                    <h1 class="text-light">Olayinka_Dev</h1>
+                    <h1>Olayinka_Dev</h1>
                 </div>
                 <ul className='aside-desktop'>
                     <li>
@@ -68,20 +68,20 @@ const Wrapper = styled.aside`
     z-index: 9997;
     transition: all 0.5s;
     padding: 0 15px;
-    background: var(--mainbody);
+    background: var(--navigationbody);
     overflow-y: auto;
     font-family: 'Open Sans', sans-serif;
-    box-shadow: 0px 4px 4px rgb(222, 225, 232);
+    box-shadow: var(--navshadow);
   }
   .profile h1{
     text-align: center;
-    color: var(--text)
+    color: var(--letter)
   }
   .profile img {
     margin: 15px auto;
     display: block;
     width: 120px;
-    border: 8px solid var(--gradientbackground);
+    border: 8px solid var(--navlinkbackground);
     border-radius: 50%;
   }
   .aside-desktop{
@@ -92,7 +92,7 @@ const Wrapper = styled.aside`
   }
 
   li {
-    background-color: var(--gradientbackground);
+    background-color: var(--navlinkbackground);
     padding: 13px 0;
     padding-left: 7px;
     border-radius: 20px;
@@ -119,10 +119,11 @@ const Wrapper = styled.aside`
   }
 
   li a {
-    color: var(--gradientcolor);
+    color: var(--navlinkcolor);
     display: flex;
     flex-direction: row;
     align-items: center;
+    text-decoration: none;
   }
   .icon {
     margin-right: 5px;
@@ -228,6 +229,7 @@ const Wrapper = styled.aside`
       width: 300px;
       background: var(--mainbody);
       border-right: 1px solid #e6e9ec;
+      height: 100vh;
       left: -300px;
       overflow: hidden;
     }
