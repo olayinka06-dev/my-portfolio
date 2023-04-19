@@ -1,4 +1,4 @@
-import { useState } from 'react';
+import { useState, useEffect } from 'react';
 import { Link } from 'react-router-dom';
 import styled from 'styled-components';
 import profileimg from './images/profile-img.jpg';
@@ -8,50 +8,61 @@ import {AiOutlineFile, AiOutlineMail} from "react-icons/ai";
 import {BiBookContent} from "react-icons/bi";
 import {CgDatabase} from "react-icons/cg";
 import '../index.css';
+import AOS from 'aos';
+import 'aos/dist/aos.css';
 
 const NavigationBar = ({backgroundSwitcher, handleToggleSwitcher, activeLink}) => {
+
+  //toggle button usestate
     const [menu, setMenu] = useState(false);
 
+    //function to open and close the mobile nav
     const toggleMenu = () => {
-        setMenu(!menu)
+      setMenu(!menu)
     }
+
+    //Aos fadding effect
+    useEffect(() => {
+      AOS.init({ duration: 1000 });
+    }, []);
+
     return (
-        <Wrapper>
-            <aside  className={`${menu ? 'mobile-toggler' : ''}`}>
-                <div class="profile box-4">
-                    <img src={profileimg} alt={profileimg} />
-                    <h1>Olayinka_Dev</h1>
-                </div>
-                <ul className='aside-desktop'>
-                    <li>
-                      <a href="#hero" className={activeLink === '#home' ? 'active' : ''}><HiOutlineHome className='icon'/>Home</a>
-                    </li>
-                    <li>
-                      <a href="#about" className={activeLink === '#about' ? 'active' : ''}><RxPerson className='icon'/>About</a>
-                    </li>
-                    <li>
-                      <a href="#resume" className={activeLink === '#resume' ? 'active' : ''}><AiOutlineFile className='icon'/>Resume</a>
-                    </li>
-                    <li>
-                      <a href="#portfolio" className={activeLink === '#portfolio' ? 'active' : ''}><BiBookContent className='icon'/>Portfolio</a>
-                    </li>
-                    <li>
-                      <a href="#services" className={activeLink === '#services' ? 'active' : ''}><CgDatabase className='icon'/>Services</a>
-                    </li>
-                    <li>
-                      <a href="#contact" className={activeLink === '#contact' ? 'active' : ''}><AiOutlineMail className='icon'/>Contact</a>
-                    </li>
-                    <li>
-                        <Link onClick={handleToggleSwitcher}>{backgroundSwitcher}</Link>
-                    </li>
-                </ul>
-                <button onClick={toggleMenu} className={`${menu ? 'toggle open' : 'toggle'}`}>
-                    <div className="first"></div>
-                    <div className="second"></div>
-                    <div className="third"></div>
-                </button>
-            </aside>
-        </Wrapper>
+      <Wrapper>
+        <aside  className={`${menu ? 'mobile-toggler' : ''}`}>
+          <div class="profile box-4">
+            <img src={profileimg} alt={profileimg} />
+            <h1>Olayinka_Dev</h1>
+          </div>
+          <ul className='aside-desktop'>
+            <li data-aos='fade-right'>
+              <a href="#hero" className={activeLink === '#home' ? 'active' : ''}><HiOutlineHome className='icon'/>Home</a>
+            </li>
+            <li data-aos='fade-left'> 
+              <a href="#about" className={activeLink === '#about' ? 'active' : ''}><RxPerson className='icon'/>About</a>
+            </li>
+            <li data-aos='fade-right'>
+              <a href="#resume" className={activeLink === '#resume' ? 'active' : ''}><AiOutlineFile className='icon'/>Resume</a>
+            </li>
+            <li data-aos='fade-left'> 
+              <a href="#portfolio" className={activeLink === '#portfolio' ? 'active' : ''}><BiBookContent className='icon'/>Portfolio</a>
+            </li>
+            <li data-aos='fade-right'>
+              <a href="#services" className={activeLink === '#services' ? 'active' : ''}><CgDatabase className='icon'/>Services</a>
+            </li>
+            <li data-aos='fade-left'>
+              <a href="#contact" className={activeLink === '#contact' ? 'active' : ''}><AiOutlineMail className='icon'/>Contact</a>
+            </li>
+            <li>
+                <Link onClick={handleToggleSwitcher}>{backgroundSwitcher}</Link>
+            </li>
+          </ul>
+          <button onClick={toggleMenu} className={`${menu ? 'toggle open' : 'toggle'}`}>
+            <div className="first"></div>
+            <div className="second"></div>
+            <div className="third"></div>
+          </button>
+        </aside>
+      </Wrapper>
     );
       
 }
@@ -72,6 +83,10 @@ const Wrapper = styled.aside`
     overflow-y: auto;
     font-family: 'Open Sans', sans-serif;
     box-shadow: var(--navshadow);
+    display: flex;
+    flex-direction: column;
+    gap: 20px;
+    overflow-x: hidden;
   }
   .profile h1{
     text-align: center;
@@ -130,22 +145,22 @@ const Wrapper = styled.aside`
     font-size: 1.5rem;
   }
   .toggle {
-  border: none;
-  background: var(--activehover);
-  cursor: pointer;
-  min-width: 40px;
-  height: 40px;
-  display: none;
-  flex-direction: column;
-  align-items: center;
-  justify-content: center;
-  gap: 5px;
-  transition: all .2s ease-in-out;
-  position: fixed;
-  top: 2%;
-  right: 2%;
-  border-radius: 50%;
-}
+    border: none;
+    background: var(--activehover);
+    cursor: pointer;
+    min-width: 40px;
+    height: 40px;
+    display: none;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    gap: 5px;
+    transition: all .2s ease-in-out;
+    position: fixed;
+    top: 2%;
+    right: 2%;
+    border-radius: 50%;
+  }
 .toggle div{
   background-color: white;
   height: 2px;
@@ -244,4 +259,4 @@ const Wrapper = styled.aside`
 
 `
 
-export default NavigationBar
+export default NavigationBar;

@@ -1,16 +1,20 @@
-import React from 'react'
+import React, { useEffect } from 'react';
 import styled from 'styled-components';
 import profileimg2 from './images/profile2-img.jpg';
-// import AOS from 'aos';
-// import 'aos/dist/aos.css';
+import AOS from 'aos';
+import 'aos/dist/aos.css';
 
 
 const About = () => {
+
+  useEffect(() => {
+    AOS.init({ duration: 1000 });
+  }, []);
   
   return (
     <Wrapper>
     <section id="about" className="about">
-      <div className="about-container">
+      <div className="about-container" data-aos='fade-up'>
         <div className="section-title">
           <h2>About <span className='about-me-color'>Me</span></h2>
           {/* <p>
@@ -31,10 +35,10 @@ const About = () => {
         </div>
 
         <div className="about-flex">
-          <div className="about-image">
+          <div className="about-image" data-aos='fade-right'>
             <img src={profileimg2} class="img-fluid" alt={profileimg2} />
           </div>
-          <div className="about-left">
+          <div className="about-left" data-aos='fade-left'>
             <h3>Web <span className='about-me-color'>Developer.</span></h3>
             <p className="about-paragraph">
               Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore

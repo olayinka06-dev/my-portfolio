@@ -12,10 +12,10 @@ import '../index.css';
 const Hero = () => {
 
 
-  // window.addEventListener('load', function() {
-  //   var box1 = document.querySelector('.box-1');
-  //   box1.classList.add('slide-fade-in-one');
-  // });
+  window.addEventListener('load', function() {
+    var box1 = document.querySelector('.box-1');
+    box1.classList.add('slide-fade-in-one');
+  });
   
   return (
     <Wrapper>
