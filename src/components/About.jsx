@@ -75,52 +75,66 @@ const About = () => {
         </div>
 
         <div class="row skills-content">
-
-          <div class="col-lg-6">
-
+          <div class="skill-slides">
             <div class="progress">
               <span class="skill">HTML <i class="val">100%</i></span>
               <div class="progress-bar-wrap">
-                <div class="progress-bar" role="progressbar" aria-valuenow="100" aria-valuemin="0" aria-valuemax="100"></div>
+              <div data-aos="fade-right" className="progress-bar" style={{width: "100%"}}></div>
               </div>
             </div>
-
             <div class="progress">
               <span class="skill">CSS <i class="val">90%</i></span>
               <div class="progress-bar-wrap">
-                <div class="progress-bar" role="progressbar" aria-valuenow="90" aria-valuemin="0" aria-valuemax="100"></div>
+              <div data-aos="fade-right" className="progress-bar" style={{width: "90%"}}></div>
               </div>
             </div>
-
-            <div class="progress">
-              <span class="skill">Bootstrap<i class="val">75%</i></span>
-              <div class="progress-bar-wrap">
-                <div class="progress-bar" role="progressbar" aria-valuenow="75" aria-valuemin="0" aria-valuemax="100"></div>
-              </div>
-            </div>
-
           </div>
 
-          <div class="col-lg-6">
+          <div className="skill-slides">
+            <div class="progress">
+                <span class="skill">Bootstrap<i class="val">75%</i></span>
+                <div class="progress-bar-wrap">
+                <div data-aos="fade-right" className="progress-bar" style={{width: "75%"}}></div>
+                </div>
+            </div>
 
             <div class="progress">
               <span class="skill">JavaScript <i class="val">80%</i></span>
               <div class="progress-bar-wrap">
-                <div class="progress-bar" role="progressbar" aria-valuenow="80" aria-valuemin="0" aria-valuemax="100"></div>
+              <div data-aos="fade-right" className="progress-bar" style={{width: "80%"}}></div>
               </div>
             </div>
+          </div>
 
+          <div class="skill-slides">
             <div class="progress">
-              <span class="skill">ReactJs / ReactNative<i class="val">90%</i></span>
+              <span class="skill">ReactJs & ReactNative<i class="val">90%</i></span>
               <div class="progress-bar-wrap">
-                <div class="progress-bar" role="progressbar" aria-valuenow="90" aria-valuemin="0" aria-valuemax="100"></div>
+              <div data-aos="fade-right" className="progress-bar" style={{width: "90%"}}></div>
               </div>
             </div>
 
             <div class="progress">
               <span class="skill">UI/UX Design <i class="val">55%</i></span>
               <div class="progress-bar-wrap">
-                <div class="progress-bar" role="progressbar" aria-valuenow="55" aria-valuemin="0" aria-valuemax="100"></div>
+                <div data-aos="fade-right" className="progress-bar" style={{width: "55%"}}></div>
+              </div>
+            </div>
+
+          </div>
+
+          <div class="skill-slides">
+            <div class="progress">
+              <span class="skill">Node js & Passport js<i class="val">90%</i></span>
+              <div class="progress-bar-wrap">
+              <div data-aos="fade-right" className="progress-bar" style={{width: "80%"}}></div>
+              </div>
+            </div>
+
+            <div class="progress">
+              <span class="skill">Mongoose & Moongo DB<i class="val">55%</i></span>
+              <div class="progress-bar-wrap">
+                <div data-aos="fade-right" className="progress-bar" style={{width: "75%"}}></div>
               </div>
             </div>
 
@@ -215,13 +229,26 @@ const Wrapper = styled.section`
   background-color: var(--sectionbackground);
 
 }
+.skills-content{
+  padding: 0 10px;
+  width: 100%;
+  display: flex;
+  flex-direction: column;
+  gap: 10px;
+}
 .skills .progress {
+  width: 100%;
   height: 60px;
   display: block;
   background: none;
   border-radius: 0;
 }
-
+.skill-slides{
+  width: 100%;
+  display: flex;
+  flex-direction: row;
+  gap: 30px;
+}
 .skills .progress .skill {
   padding: 10px 0;
   margin: 0;
@@ -229,7 +256,7 @@ const Wrapper = styled.section`
   display: block;
   font-weight: 600;
   font-family: "Poppins", sans-serif;
-  color: #45505b;
+  color: var(--letter);
 }
 
 .skills .progress .skill .val {
@@ -238,14 +265,14 @@ const Wrapper = styled.section`
 }
 
 .skills .progress-bar-wrap {
-  background: #f2f3f5;
+  background-color: var(--navlinkbackground);
 }
 
 .skills .progress-bar {
   width: 1px;
   height: 10px;
   transition: 0.9s;
-  background-color: #0563bb;
+  background: var(--activehover);
 }
 
 
@@ -264,6 +291,13 @@ const Wrapper = styled.section`
   }
   .img-fluid{
     width: 100%;
+  }
+  .skills-content{
+    gap: 20px;
+  }
+  .skill-slides{
+    flex-direction: column;
+    gap: 15px;
   }
 
 }
