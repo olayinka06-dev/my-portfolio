@@ -76,20 +76,24 @@ const Wrapper = styled.aside`
     z-index: 9997;
     transition: all 0.5s;
     padding: 0 15px;
-    background: var(--mainbody);
+    background: var(--navigationbody);
     overflow-y: auto;
     font-family: 'Open Sans', sans-serif;
-    box-shadow: 0px 4px 4px rgb(222, 225, 232);
+    box-shadow: var(--navshadow);
+    display: flex;
+    flex-direction: column;
+    gap: 20px;
+    overflow-x: hidden;
   }
   .profile h1{
     text-align: center;
-    color: var(--text)
+    color: var(--letter)
   }
   .profile img {
     margin: 15px auto;
     display: block;
     width: 120px;
-    border: 8px solid var(--gradientbackground);
+    border: 8px solid var(--navlinkbackground);
     border-radius: 50%;
   }
   .aside-desktop{
@@ -100,7 +104,7 @@ const Wrapper = styled.aside`
   }
 
   li {
-    background-color: var(--gradientbackground);
+    background-color: var(--navlinkbackground);
     padding: 13px 0;
     padding-left: 7px;
     border-radius: 20px;
@@ -127,32 +131,33 @@ const Wrapper = styled.aside`
   }
 
   li a {
-    color: var(--gradientcolor);
+    color: var(--navlinkcolor);
     display: flex;
     flex-direction: row;
     align-items: center;
+    text-decoration: none;
   }
   .icon {
     margin-right: 5px;
     font-size: 1.5rem;
   }
   .toggle {
-  border: none;
-  background: var(--activehover);
-  cursor: pointer;
-  min-width: 40px;
-  height: 40px;
-  display: none;
-  flex-direction: column;
-  align-items: center;
-  justify-content: center;
-  gap: 5px;
-  transition: all .2s ease-in-out;
-  position: fixed;
-  top: 2%;
-  right: 2%;
-  border-radius: 50%;
-}
+    border: none;
+    background: var(--activehover);
+    cursor: pointer;
+    min-width: 40px;
+    height: 40px;
+    display: none;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    gap: 5px;
+    transition: all .2s ease-in-out;
+    position: fixed;
+    top: 2%;
+    right: 2%;
+    border-radius: 50%;
+  }
 .toggle div{
   background-color: white;
   height: 2px;
@@ -236,6 +241,7 @@ const Wrapper = styled.aside`
       width: 300px;
       background: var(--mainbody);
       border-right: 1px solid #e6e9ec;
+      height: 100vh;
       left: -300px;
       overflow: hidden;
     }
